@@ -7,7 +7,7 @@ const guid = require('guid');
 exports.get = (req, res, next) => {
     Venda
         .find({}, "number cliente createDate items")
-        .populate("cliente", "nome email cpf cep")
+        .populate("cliente")
         .populate("items.produto", "titulo descricao valor")
         .then(data => {
             res.status(200).send(data);
@@ -35,9 +35,10 @@ exports.post = (req, res, next) => {
         });
 }
 
-
 exports.del = (req, res, next) => {
-    Venda.findOneAndRemove(req.params.id)
+    Venda.remove({
+            _id: req.params.id
+        })
         .then(x => {
             res.status(200).send({
                 message: 'Venda removido com sucesso'

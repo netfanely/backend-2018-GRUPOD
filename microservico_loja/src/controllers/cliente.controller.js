@@ -3,8 +3,28 @@
 const mongoose = require('mongoose');
 const Cliente = mongoose.model('Cliente');
 const request = require('request');
+var rp = require('request-promise');
 
 
+function getAdrres() {
+    var options = {
+        hostname: 'localhost',
+        port: 8081,
+        path: '/74825010',
+        methods: 'GET'
+    };
+
+    http.request(options, function(res) {
+        var body = '';
+        res.on('data', function(chunck) {
+            body += chunck;
+        })
+        res.on('end', function() {
+            myVar = JSON.parse(body).rua.renderToString;
+        })
+
+    }).end();
+}
 
 exports.get = (req, res, next) => {
     Cliente
@@ -17,52 +37,68 @@ exports.get = (req, res, next) => {
         });
 };
 
+
+
 exports.post = (req, res, next) => {
     var cliente = new Cliente();
     cliente.nome = req.body.nome;
     cliente.cpf = req.body.cpf;
     cliente.cep = req.body.cep;
-    request('http://localhost:8081/' + cliente.cep, {
-        json: true
-    }, (err, res, body) => {
-        cliente.endereco = res.rua + res.numero + res.bairro + res.cidade;
-    });
     cliente.email = req.body.email;
-    cliente.save()
-        .then(x => {
-            res.status(201).send({
-                message: 'Cliente cadastrado com sucesso!'
+    var options = {
+        uri: 'http://localhost:8081/' + cliente.cep,
+        json: true,
+    };
+    rp(options)
+        .then(function(repos) {
+            cliente.endereco = repos.rua + ", bairro " + repos.bairro + ", número " + repos.numero +
+                " ." + repos.cidade + "-" + repos.estado;
+            cliente.save(function(err) {
+                if (err)
+                    res.send(err);
+                res.json({
+                    message: 'Cliente cadastrado com sucesso!'
+                });
             });
-        }).catch(e => {
-            res.status(400).send({
-                message: 'Falha cadastrar cliente',
-                data: e
-            });
+        })
+        .catch(function(err) {
+            console.log(err)
         });
 }
 
 exports.put = (req, res, next) => {
-    Cliente.findByIdAndUpdate(req.params.id, {
-            $set: {
-                nome: req.body.nome,
-                cep: req.body.cep,
-                email: req.body.email
-            }
-        })
-        .then(x => {
-            res.status(200).send({
-                message: 'Cliente atualizado com sucesso'
+
+    Cliente.findById(req.params.id, function(err, cliente) {
+        cliente.nome = req.body.nome;
+        cliente.cep = req.body.cep;
+        cliente.email = req.body.email;
+        var options = {
+            uri: 'http://localhost:8081/' + cliente.cep,
+            json: true,
+        };
+        rp(options)
+            .then(function(repos) {
+                cliente.endereco = repos.rua + ", bairro " + repos.bairro + ", número " + repos.numero +
+                    " ." + repos.cidade + "-" + repos.estado;
+                cliente.save(function(err) {
+                    if (err)
+                        res.send(err);
+                    res.json({
+                        message: 'Cliente atualizado com sucesso!'
+                    });
+                });
             })
-        })
-        .catch(e => {
-            res.status(400).send({
-                message: 'Falha ao atualizar o cliente'
-            })
-        })
+            .catch(function(err) {
+                console.log(err)
+            });
+    });
+
 };
 
-exports.del = (req, res, next) => {
-    Cliente.findOneAndRemove(req.params.id)
+exports.delCliente = (req, res, next) => {
+    Cliente.remove({
+            _id: req.params.id
+        })
         .then(x => {
             res.status(200).send({
                 message: 'Cliente removido com sucesso'
@@ -70,7 +106,7 @@ exports.del = (req, res, next) => {
         })
         .catch(e => {
             res.status(400).send({
-                message: 'Falha ao remover cliente'
+                message: 'Falha ao remover o cliente'
             })
         })
 };

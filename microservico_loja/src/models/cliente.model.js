@@ -18,6 +18,7 @@ const cliente = new SchemaCliente({
     },
     endereco: {
         type: String,
+        required: true
     },
     email: {
         type: String,
