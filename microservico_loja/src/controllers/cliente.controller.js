@@ -6,26 +6,6 @@ const request = require('request');
 var rp = require('request-promise');
 
 
-function getAdrres() {
-    var options = {
-        hostname: 'localhost',
-        port: 8081,
-        path: '/74825010',
-        methods: 'GET'
-    };
-
-    http.request(options, function(res) {
-        var body = '';
-        res.on('data', function(chunck) {
-            body += chunck;
-        })
-        res.on('end', function() {
-            myVar = JSON.parse(body).rua.renderToString;
-        })
-
-    }).end();
-}
-
 exports.get = (req, res, next) => {
     Cliente
         .find({})
@@ -62,7 +42,9 @@ exports.post = (req, res, next) => {
             });
         })
         .catch(function(err) {
-            console.log(err)
+            res.json({
+                message: err
+            });
         });
 }
 
@@ -89,7 +71,9 @@ exports.put = (req, res, next) => {
                 });
             })
             .catch(function(err) {
-                console.log(err)
+                res.json({
+                    message: err
+                });
             });
     });
 
