@@ -13,6 +13,7 @@ http://localhost:8081/
 
 ### GET por CEP
 http://localhost:8081/:cep
+
 _Exemplo: http://localhost:8081/74825210_
 
 ### POST CEP
