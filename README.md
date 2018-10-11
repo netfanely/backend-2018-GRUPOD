@@ -7,7 +7,7 @@
 
 # Instruções
 
-1. Acessar e iniciar o microservico_correios
+Acessar e iniciar o microservico_correios
 
 `cd microservico_correios`
 
@@ -15,7 +15,7 @@
 
 `npm start`
 
-2. Acessar e iniciar o microservico_loja
+Acessar e iniciar o microservico_loja
 
 `cd microservico_loja`
 
@@ -28,7 +28,7 @@
 ### GET Produtos
 http://localhost:3000/produtos
 
-#### POST Produtos
+### POST Produtos
 http://localhost:3000/produtos
 
 Formato:
@@ -63,7 +63,7 @@ http://localhost:3000/produtos/:id
 ### GET Clientes
 http://localhost:3000/clientes
 
-#### POST Clientes
+### POST Clientes
 http://localhost:3000/clientes
 
 Formato:
@@ -98,7 +98,7 @@ http://localhost:3000/clientes/:id
 ### GET Vendas
 http://localhost:3000/vendas
 
-#### POST Vendas
+### POST Vendas
 http://localhost:3000/vendas
 
 Formato:
