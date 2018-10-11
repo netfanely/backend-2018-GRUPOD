@@ -10,13 +10,17 @@
 1. Acessar e iniciar o microservico_correios
 
 `cd microservico_correios`
+
 `npm install`
+
 `npm start`
 
 2. Acessar e iniciar o microservico_loja
 
 `cd microservico_loja`
+
 `npm install`
+
 `npm start`
 
 ## Métodos HTTP Loja
