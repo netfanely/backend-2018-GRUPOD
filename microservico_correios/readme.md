@@ -1,19 +1,22 @@
 # Microservico_Correios
 
 Iniciar API
+
 `npm install`
+
 `npm start`
 
-##Metódos HTTP Correios
+## Metódos HTTP Correios
 
-###GET Ceps
+### GET Ceps
 http://localhost:8081/
 
-###GET por CEP
+### GET por CEP
 http://localhost:8081/:cep
+
 _Exemplo: http://localhost:8081/74825210_
 
-###POST CEP
+### POST CEP
 http://localhost:8081/
 
 Formato:
@@ -29,7 +32,7 @@ Formato:
 }
 ```
 
-###PUT CEP
+### PUT CEP
 http://localhost:8081/:id
 
 Formato:
@@ -44,5 +47,5 @@ Formato:
 }
 ```
 
-###Delete CEP
+### Delete CEP
 http://localhost:8081/:id

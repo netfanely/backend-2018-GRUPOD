@@ -1,15 +1,17 @@
 # Microservico_loja
 
 Iniciar API
+
 `npm install`
+
 `npm start`
 
-##Métodos HTTP Loja
+## Métodos HTTP Loja
 
-###GET Produtos
+### GET Produtos
 http://localhost:3000/produtos
 
-####POST Produtos
+#### POST Produtos
 http://localhost:3000/produtos
 
 Formato:
@@ -23,7 +25,7 @@ Formato:
 }
 ```
 
-###PUT Produtos
+### PUT Produtos
 http://localhost:3000/produtos/:id
 
 Formato:
@@ -36,15 +38,15 @@ Formato:
 }
 ```
 
-###DELETE Produtos
+### DELETE Produtos
 http://localhost:3000/produtos/:id
 
 ---
 
-###GET Clientes
+### GET Clientes
 http://localhost:3000/clientes
 
-####POST Clientes
+#### POST Clientes
 http://localhost:3000/clientes
 
 Formato:
@@ -58,7 +60,7 @@ Formato:
 }
 ```
 
-###PUT Clientes
+### PUT Clientes
 http://localhost:3000/clientes/:id
 
 Formato:
@@ -71,15 +73,15 @@ Formato:
 }
 ```
 
-###DELETE Clientes
+### DELETE Clientes
 http://localhost:3000/clientes/:id
 
 ---
 
-###GET Vendas
+### GET Vendas
 http://localhost:3000/vendas
 
-####POST Vendas
+#### POST Vendas
 http://localhost:3000/vendas
 
 Formato:
@@ -95,5 +97,5 @@ Formato:
 }
 ```
 
-###DELETE Vendas
+### DELETE Vendas
 http://localhost:3000/vendas

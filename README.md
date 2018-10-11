@@ -1,30 +1,34 @@
-﻿#backend-2018-GRUPOD
+# backend-2018-GRUPOD
 
 - Fanny Pastor Humpiri
 - Danillo Guimarães de Oliveira
 - Rhada costa
 - Bruno Pinheiro
 
-#Instruções
+# Instruções
 
-1. Acessar e iniciar o microservico_correios
+Acessar e iniciar o microservico_correios
 
 `cd microservico_correios`
+
 `npm install`
+
 `npm start`
 
-2. Acessar e iniciar o microservico_loja
+Acessar e iniciar o microservico_loja
 
 `cd microservico_loja`
+
 `npm install`
+
 `npm start`
 
-##Métodos HTTP Loja
+## Métodos HTTP Loja
 
-###GET Produtos
+### GET Produtos
 http://localhost:3000/produtos
 
-####POST Produtos
+### POST Produtos
 http://localhost:3000/produtos
 
 Formato:
@@ -38,7 +42,7 @@ Formato:
 }
 ```
 
-###PUT Produtos
+### PUT Produtos
 http://localhost:3000/produtos/:id
 
 Formato:
@@ -51,15 +55,15 @@ Formato:
 }
 ```
 
-###DELETE Produtos
+### DELETE Produtos
 http://localhost:3000/produtos/:id
 
 ---
 
-###GET Clientes
+### GET Clientes
 http://localhost:3000/clientes
 
-####POST Clientes
+### POST Clientes
 http://localhost:3000/clientes
 
 Formato:
@@ -73,7 +77,7 @@ Formato:
 }
 ```
 
-###PUT Clientes
+### PUT Clientes
 http://localhost:3000/clientes/:id
 
 Formato:
@@ -86,15 +90,15 @@ Formato:
 }
 ```
 
-###DELETE Clientes
+### DELETE Clientes
 http://localhost:3000/clientes/:id
 
 ---
 
-###GET Vendas
+### GET Vendas
 http://localhost:3000/vendas
 
-####POST Vendas
+### POST Vendas
 http://localhost:3000/vendas
 
 Formato:
@@ -104,25 +108,26 @@ Formato:
 	"cliente": "<id do cliente>",
 	"items":[{
 		"qtdade": "",
-		"produto": "<idd do produto",
+		"produto": "<id do produto>",
 	}]
 
 }
 ```
 
-###DELETE Vendas
+### DELETE Vendas
 http://localhost:3000/vendas
 
-##Metódos HTTP Correios
+## Metódos HTTP Correios
 
-###GET Ceps
+### GET Ceps
 http://localhost:8081/
 
-###GET por CEP
+### GET por CEP
 http://localhost:8081/:cep
+
 _Exemplo: http://localhost:8081/74825210_
 
-###POST CEP
+### POST CEP
 http://localhost:8081/
 
 Formato:
@@ -138,7 +143,7 @@ Formato:
 }
 ```
 
-###PUT CEP
+### PUT CEP
 http://localhost:8081/:id
 
 Formato:
@@ -153,5 +158,5 @@ Formato:
 }
 ```
 
-###Delete CEP
+### Delete CEP
 http://localhost:8081/:id
