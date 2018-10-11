@@ -108,7 +108,7 @@ Formato:
 	"cliente": "<id do cliente>",
 	"items":[{
 		"qtdade": "",
-		"produto": "<idd do produto",
+		"produto": "<id do produto>",
 	}]
 
 }
@@ -124,6 +124,7 @@ http://localhost:8081/
 
 ### GET por CEP
 http://localhost:8081/:cep
+
 _Exemplo: http://localhost:8081/74825210_
 
 ### POST CEP
