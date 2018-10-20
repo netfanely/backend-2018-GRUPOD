@@ -1,5 +1,7 @@
 # backend-2018-GRUPOD
-* Fanny Pastor Humpiri
-* Danillo Guimarães de Oliveira
-* Rhada costa
+PROF. WALLISON
+
 * Bruno Pinheiro
+* Danillo Guimarães de Oliveira
+* Fanny Pastor Humpiri
+* Rhada costa
