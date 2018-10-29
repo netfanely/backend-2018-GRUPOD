@@ -66,15 +66,17 @@ exports.put = (req, res, next) => {
 };
 
 exports.del = (req, res, next) => {
-    Cep.findOneAndRemove(req.params.id)
+    Cep.remove({
+            _id: req.params.id
+        })
         .then(x => {
             res.status(200).send({
-                message: 'Cep removido com sucesso'
+                message: 'CEP removido com sucesso'
             })
         })
         .catch(e => {
             res.status(400).send({
-                message: 'Falha ao remover produto'
+                message: 'Falha ao remover CEP'
             })
         })
 };
