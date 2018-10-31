@@ -98,4 +98,4 @@ Formato:
 ```
 
 ### DELETE Vendas
-http://localhost:3000/vendas
+http://localhost:3000/vendas/:id
