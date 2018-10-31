@@ -1,12 +1,4 @@
 # backend-2018-GRUPOD
-<<<<<<< HEAD
-PROF. WALLISON
-
-* Bruno Pinheiro
-* Danillo Guimarães de Oliveira
-* Fanny Pastor Humpiri
-* Rhada costa
-=======
 
 - Fanny Pastor Humpiri
 - Danillo Guimarães de Oliveira
@@ -168,4 +160,4 @@ Formato:
 
 ### Delete CEP
 http://localhost:8081/:id
->>>>>>> v2
+
