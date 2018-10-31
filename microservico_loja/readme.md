@@ -1,67 +1,101 @@
-# Lab API Node Express Mongo
+# Microservico_loja
 
-Experimento de criação de API com NodeJS, Express e MongoDB.
-
-## Executando a API
-
-### Iniciando o Mongo
-
-`mongod`
-
-### Instalando dependências
+Iniciar API
 
 `npm install`
 
-### Executando em modo *dev*
+`npm start`
 
-`npm run dev`
+## Métodos HTTP Loja
 
-### Executando um serviço
+### GET Produtos
+http://localhost:3000/produtos
 
-Abra o endereço `http://localhost:8080/api/alunos` num navegador.
+#### POST Produtos
+http://localhost:3000/produtos
 
-## Criando uma API
+Formato:
 
-### Requisitos
-
-* Node instalado.
-* Mongo instalado e executando.
-
-### Crie uma nova pasta e vá para ela
-
-`mkdir myapi && cd myapi`
-
-## Inicie um projeto Node
-
-`npm init`
-
-Com `enter`, aceite todas as opções padrão. Note que o arquivo `package.json` foi criado.
-
-### Instale as dependências
-
-`npm install express body-parser mongoose node-restful mongoose-paginate lodash express-query-int pm2 --save`
-
-Essa operação baixa e instala, na pasta `node_modules` todas as dependências. Isso pode demorar alguns minutos. A pasta `node_modules` não deve ir para o controle de versão.
-
-O parâmetro `--save` do comando `npm install` inclui as dependências no arquivo `package.json`.
-
-### Instale as dependências de desenvolvimento
-
-`npm i nodemon --save-dev`
-
-Essa dependência será usada apenas durante o desenvolvimento.
-
-### Defina os scripts de execução
-
-Inclua os scripts `dev` e `production` da seguinte forma. 
-
-```
-...
-"scripts": {
-  "dev": "nodemon",
-  "production": "pm2 start index.js --name myapi
-},
-...
+```javascript
+{
+	"titulo": "",
+	"descricao": "",
+	"codigo": "",
+	"valor": "",
+}
 ```
 
-Nesse ponto a API está pronta para ser implementada.
+### PUT Produtos
+http://localhost:3000/produtos/:id
+
+Formato:
+
+```javascript
+{
+	"titulo": "",
+	"descricao": "",
+	"valor": "",
+}
+```
+
+### DELETE Produtos
+http://localhost:3000/produtos/:id
+
+---
+
+### GET Clientes
+http://localhost:3000/clientes
+
+#### POST Clientes
+http://localhost:3000/clientes
+
+Formato:
+
+```javascript
+{
+	"nome": "",
+	"cpf": "",
+	"cep": "",
+	"email": "",
+}
+```
+
+### PUT Clientes
+http://localhost:3000/clientes/:id
+
+Formato:
+
+```javascript
+{
+	"nome": "",
+	"cep": "",
+	"email": "",
+}
+```
+
+### DELETE Clientes
+http://localhost:3000/clientes/:id
+
+---
+
+### GET Vendas
+http://localhost:3000/vendas
+
+#### POST Vendas
+http://localhost:3000/vendas
+
+Formato:
+
+```javascript
+{
+	"cliente": "<id do cliente>",
+	"items":[{
+		"qtdade": "",
+		"produto": "<idd do produto",
+	}]
+
+}
+```
+
+### DELETE Vendas
+http://localhost:3000/vendas
